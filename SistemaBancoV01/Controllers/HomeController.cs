@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SistemaBancoV01.Controllers  
+namespace SistemaBancoV01.Controllers
 {
-    public class ClienteController : Controller
+    public class HomeController : Controller
     {
-        // GET: Cliente
+        // GET: Home
         public ActionResult Index()
         {
             return View();
