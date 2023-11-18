@@ -13,5 +13,10 @@ namespace SistemaBancoV01.Controllers
         {
             return View();
         }
+
+        public ActionResult addclient()
+        {
+            return View();
+        }
     }
 }
