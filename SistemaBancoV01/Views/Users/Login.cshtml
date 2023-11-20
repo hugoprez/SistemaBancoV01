@@ -1,0 +1,44 @@
+﻿@model SistemaBancoV01.Models.Users
+
+@Styles.Render("~/Content/css")
+
+@{
+    Layout = null;
+}
+
+<div class="login">
+    <div class="login__content">
+        <section class="login__form">
+            @using (Html.BeginForm("Login", "Users", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="login__group">
+                    @Html.Label("Usuario", new { @class = "login__label" })
+                    <div class="login__group-input">
+                        @Html.TextBoxFor(m => m.nombre_usuario, new { @class = "login__input-text" })
+                        @*@Html.ValidationMessageFor(m => m.Email, "", new { @class = "" })*@
+                    </div>
+                </div>
+                <div class="login__group">
+                    @Html.Label("Contraseña", new { @class = "login__label" })
+                    <div class="login__group-input">
+                        @Html.TextBoxFor(m => m.contrasena, new { @class = "login__input-text" })
+                        @*@Html.ValidationMessageFor(m => m.Email, "", new { @class = "" })*@
+                    </div>
+                </div>
+                <div class="login__group">
+                    <input type="submit" value="Log in" class="login__button" />
+                </div>
+                <div class="login__group login__group--create">
+                    @*<input type="submit" value="Crear cuenta" class="login__button" />*@
+                    @ViewBag.Message
+                </div>
+
+            }
+        </section>
+        @*<div><a href="#">Iniciar Sesión</a></div>
+            <div><a href="#">Crear Cuenta</a></div>*@
+    </div>
+</div>
+
